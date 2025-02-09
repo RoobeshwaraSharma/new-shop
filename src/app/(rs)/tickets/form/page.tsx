@@ -1,6 +1,7 @@
 import { Backbutton } from "@/components/BackButton";
 import { getCustomer } from "@/lib/quaries/getCustomer";
 import { getTicket } from "@/lib/quaries/getTicket";
+import TicketForm from "./TicketsForm";
 
 export default async function TicketFormPage({
   searchParams,
@@ -45,6 +46,7 @@ export default async function TicketFormPage({
         );
       }
       //Return ticket form
+      return <TicketForm customer={customer} />;
       console.log(customer);
     }
     //Edit ticket form
@@ -62,6 +64,7 @@ export default async function TicketFormPage({
       // return ticket form
       console.log("ticket", ticket);
       console.log("customer", customer);
+      return <TicketForm customer={customer} ticket={ticket} />;
     }
   } catch (e) {
     if (e instanceof Error) {
