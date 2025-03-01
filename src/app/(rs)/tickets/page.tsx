@@ -1,6 +1,7 @@
 import TicketSearch from "@/app/(rs)/tickets/TicketSearch";
 import { getOpenTickets } from "@/lib/quaries/getOpenTickets";
 import { getTicketSearchResults } from "@/lib/quaries/getTicketSearchResults";
+import TicketTable from "./form/TicketTable";
 
 export const metadata = {
   title: "Ticket Search",
@@ -18,7 +19,11 @@ export default async function Tickets({
     return (
       <>
         <TicketSearch />
-        <p>{JSON.stringify(results)}</p>
+        {results.length ? (
+          <TicketTable data={results} />
+        ) : (
+          <p className="mt-4">No open tickets found</p>
+        )}
       </>
     );
   }
@@ -28,7 +33,11 @@ export default async function Tickets({
   return (
     <>
       <TicketSearch />
-      <p>{JSON.stringify(results)}</p>
+      {results.length ? (
+        <TicketTable data={results} />
+      ) : (
+        <p className="mt-4">No results found</p>
+      )}
     </>
   );
 }
