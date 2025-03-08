@@ -1,7 +1,7 @@
 import TicketSearch from "@/app/(rs)/tickets/TicketSearch";
 import { getOpenTickets } from "@/lib/quaries/getOpenTickets";
 import { getTicketSearchResults } from "@/lib/quaries/getTicketSearchResults";
-import TicketTable from "./form/TicketTable";
+import TicketTable from "./TicketTable";
 
 export const metadata = {
   title: "Ticket Search",
